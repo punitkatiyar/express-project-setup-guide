@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/insert">insert</a></li>
+                <li><a href="/view">view</a></li>
+                <li><a href="/update">update</a></li>
+                <li><a href="/delete">delete</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h1 class="title">Home Page</h1>
+            <table border="1" width="100%" cellpadding="12px">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email Name</th>
+                        <th>Mobile Name</th>
+                        <th>Course Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% contacts.forEach(contact=>{ %>
+                        <tr>
+                            <td height="40px">
+                                <%= contact.first_name %>
+                            </td>
+                            <td>
+                                <%= contact.last_name %>
+                            </td>
+                            <td>
+                                <%= contact.email %>
+                            </td>
+                            <td>
+                                <%= contact.mobile %>
+                            </td>
+                            <td>
+                                <%= contact.course %>
+                            </td>
+                            <td><a href="/edit/<%= contact._id %>">Edit</a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+
+
+        </section>
+    </div>
+</body>
+
+</html>
